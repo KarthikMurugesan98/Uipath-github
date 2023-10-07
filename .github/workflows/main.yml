@@ -64,7 +64,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: Artifacts
-      - name: Publish Nuget Package to DEV
+      name: Deploy to UiPath Orchestrator
+        run: |
+          ./UiPathDeploy.ps1 -packages_path "path/to/your/package.nupkg" -orchestrator_url ${{ env.ORCH_URL }} -orchestrator_tenant ${{ env.ORCH_TENANT }} -account_name ${{ env.ORCH_ACC_NAME }} -UserKey ${{ secrets.UIPATH_USER_KEY }} -language "en-US"
+        env:
+          UIPATH_USER_KEY: ${{ secrets.UIPATH_USER_KEY }}
         shell: pwsh
-        run: ${{ github.workspace }}\scripts\UiPathDeploy.ps1 ${{ github.workspace }}\package ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}}
-   

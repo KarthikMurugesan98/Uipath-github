@@ -9,6 +9,10 @@
     "UiPath.Testing.Activities": "[23.6.0-preview]",
     "UiPath.UIAutomation.Activities": "[23.6.1-preview]"
   },
+  {
+  "processName": "YourProcessName",
+  "environmentName": "YourEnvironmentName"
+  },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",

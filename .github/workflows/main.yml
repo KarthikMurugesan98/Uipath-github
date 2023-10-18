@@ -17,7 +17,7 @@ env:
   ORCH_ACC_NAME: ${{ secrets.UIPATHACCOUNTNAME }}
   ORCH_PAT: ${{ secrets.UIPATHPAT }}
   PROCESS_NAME: MergeExcel
-  ENVIRONMENT_NAME: DefaultTenant
+  ENVIRONMENT_NAME: DefaultTenant 
 
 jobs:
   print-details:
@@ -65,7 +65,7 @@ jobs:
     runs-on: windows-latest
     steps: 
       - name: Download UiPath Artifacts
-        uses: actions/download-artifact@v2 
+        uses: actions/download-artifact@v2
         with:
           name: Artifacts
       - name: Publish to Orchestrator
@@ -81,3 +81,4 @@ jobs:
             \"ProcessVersion\": \"1.0.0\",
             \"InputArguments\": \"{}\"
           }"
+      
